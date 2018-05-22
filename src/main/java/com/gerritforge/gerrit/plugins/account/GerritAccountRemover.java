@@ -112,6 +112,7 @@ public class GerritAccountRemover implements AccountRemover {
             .stream()
             .map(eid -> eid.identity)
             .filter(eid -> !eid.startsWith(ExternalId.SCHEME_USERNAME))
+            .filter(eid -> !eid.startsWith(ExternalId.SCHEME_UUID))
             .filter(Objects::nonNull)
             .collect(Collectors.toList());
     if (externalIds.size() > 0) {
