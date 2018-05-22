@@ -21,6 +21,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,6 +57,9 @@ public class XAuthFilter extends AllRequestFilter {
         String currentUser = session.getUser().getUserName();
         log.info("REST API URI {} allowed for user {}", uri, currentUser);
         session.setAccessPathOk(AccessPath.REST_API, true);
+      } else {
+        ((HttpServletResponse) response).sendError(HttpServletResponse.SC_FORBIDDEN);
+        return;
       }
     }
     
