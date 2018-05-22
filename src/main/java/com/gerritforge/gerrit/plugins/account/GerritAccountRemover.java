@@ -33,7 +33,6 @@ import com.google.gerrit.server.account.externalids.ExternalId;
 import com.google.gerrit.server.permissions.PermissionBackend;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -112,6 +111,7 @@ public class GerritAccountRemover implements AccountRemover {
             .stream()
             .map(eid -> eid.identity)
             .filter(eid -> !eid.startsWith(ExternalId.SCHEME_USERNAME))
+            .filter(eid -> !eid.startsWith(ExternalId.SCHEME_UUID))
             .filter(Objects::nonNull)
             .collect(Collectors.toList());
     if (externalIds.size() > 0) {

@@ -14,30 +14,28 @@
 
 package com.gerritforge.gerrit.plugins.account;
 
-import java.io.IOException;
-
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.gerrit.extensions.registration.DynamicItem;
 import com.google.gerrit.httpd.AllRequestFilter;
 import com.google.gerrit.httpd.WebSession;
 import com.google.gerrit.server.AccessPath;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import java.io.IOException;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Singleton
 public class XAuthFilter extends AllRequestFilter {
   public static final String ALLOWED_URI_SUFFIX = "/a/accounts/self";
-  
+
   private static final Logger log = LoggerFactory.getLogger(XAuthFilter.class);
-  
+
   private DynamicItem<WebSession> webSession;
 
   @Inject
@@ -49,16 +47,19 @@ public class XAuthFilter extends AllRequestFilter {
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
       throws IOException, ServletException {
     String uri = ((HttpServletRequest) request).getRequestURI();
-    
-    if(uri.endsWith(ALLOWED_URI_SUFFIX)) {
+
+    if (uri.endsWith(ALLOWED_URI_SUFFIX)) {
       WebSession session = webSession.get();
-      if(session != null && session.isSignedIn() && session.getXGerritAuth() != null) {
+      if (session != null && session.isSignedIn() && session.getXGerritAuth() != null) {
         String currentUser = session.getUser().getUserName();
         log.info("REST API URI {} allowed for user {}", uri, currentUser);
         session.setAccessPathOk(AccessPath.REST_API, true);
+      } else {
+        ((HttpServletResponse) response).sendError(HttpServletResponse.SC_FORBIDDEN);
+        return;
       }
     }
-    
+
     chain.doFilter(request, response);
   }
 }
