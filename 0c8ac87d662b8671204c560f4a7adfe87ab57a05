@@ -46,6 +46,30 @@
       "revId": "0c8ac87d662b8671204c560f4a7adfe87ab57a05",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5404d645_f92b521a",
+        "filename": "src/main/resources/static/account.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1045122
+      },
+      "writtenOn": "2018-05-23T08:41:27Z",
+      "side": 1,
+      "message": "I\u0027m not so familiar with Gerrit\u0027s code, but I was hoping there\u0027s a way to have this page+form without reinventing wheels about Javascript frameworks and stylesheets or even starting a HTML tag.\n\nHave you considered making this a button on the Settings page for example? Again, I am asking this without being very familiar with the code base.\n\nAnd I do appreciate your efforts here. :)",
+      "parentUuid": "921a579d_2532a9d3",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 86
+      },
+      "revId": "0c8ac87d662b8671204c560f4a7adfe87ab57a05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
