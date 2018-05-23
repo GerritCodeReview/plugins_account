@@ -70,6 +70,30 @@
       "revId": "0c8ac87d662b8671204c560f4a7adfe87ab57a05",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82a60974_72fdc0f5",
+        "filename": "src/main/resources/static/account.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-05-23T09:11:22Z",
+      "side": 1,
+      "message": "\u003e I\u0027m not so familiar with Gerrit\u0027s code, but I was hoping there\u0027s a way to have this page+form without reinventing wheels about Javascript frameworks and stylesheets or even starting a HTML tag.\n\nYes, we could have a plain HTML and JavaScript but, then, I would be reinventing the wheel again rather than just use jQuery or AngularJS.\n\n\u003e Have you considered making this a button on the Settings page for example? Again, I am asking this without being very familiar with the code base.\n\nFor GWT yes, but then won\u0027t be available on PolyGerrit.\nFor PolyGerrit, not yet because the plugin API isn\u0027t that mature yet.\n\n\u003e And I do appreciate your efforts here. :)\n\nAppreciate the reviews as well, thanks for your feedback !",
+      "parentUuid": "5404d645_f92b521a",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 86
+      },
+      "revId": "0c8ac87d662b8671204c560f4a7adfe87ab57a05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
