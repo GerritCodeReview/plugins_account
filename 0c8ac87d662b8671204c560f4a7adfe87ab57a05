@@ -94,6 +94,30 @@
       "revId": "0c8ac87d662b8671204c560f4a7adfe87ab57a05",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07f3cca8_623cecc1",
+        "filename": "src/main/resources/static/account.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-05-23T21:59:18Z",
+      "side": 1,
+      "message": "I did a bit a research and, with my limited front-end dev skills, I ended up with:\n- definition of a bower.json with the dependencies (bootstrap, jquery, angular)\n- download of the framework deps at build time \n- inclusion of all dependent js and css in the final plugin artifact\n\nThat would then address your concern :-) what do you think?",
+      "parentUuid": "82a60974_72fdc0f5",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 86
+      },
+      "revId": "0c8ac87d662b8671204c560f4a7adfe87ab57a05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
