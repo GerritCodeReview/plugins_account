@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c1ce72b5_cb251960",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/account/AccountLoginRedirectFilter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-05-25T13:32:06Z",
+      "side": 1,
+      "message": "Missing license",
+      "revId": "b09d4e03f22e565b6fdab3401881094ef7413530",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
