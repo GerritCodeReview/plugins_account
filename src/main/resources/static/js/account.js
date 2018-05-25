@@ -33,8 +33,6 @@ app.controller('AccountDeleteController', function AccountDeleteController($scop
     headers: {'X-Requested-With' : 'XMLHttpRequest'}
   }).then(function(response) {
     $scope.account = response.data.account_info;
-  }, function(error) {
-    $window.location.href = "/login";
   });
   
   $scope.backToGerrit = function() {
