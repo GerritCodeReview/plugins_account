@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a18850e2_396335a1",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/account/HttpModule.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-05-25T14:25:43Z",
+      "side": 1,
+      "message": "License missing",
+      "revId": "4b36ad85be706aa2d25eeb878434e50779b29d0c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
