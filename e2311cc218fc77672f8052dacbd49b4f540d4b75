@@ -22,6 +22,30 @@
       "revId": "e2311cc218fc77672f8052dacbd49b4f540d4b75",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94cbfd85_fc692c35",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/account/GerritAccountRemover.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-05-25T14:24:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1683328_7e3765d7",
+      "range": {
+        "startLine": 111,
+        "startChar": 54,
+        "endLine": 111,
+        "endChar": 69
+      },
+      "revId": "e2311cc218fc77672f8052dacbd49b4f540d4b75",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
