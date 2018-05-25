@@ -14,21 +14,24 @@
 
 package com.gerritforge.gerrit.plugins.account;
 
-import com.google.gerrit.extensions.registration.DynamicItem;
-import com.google.gerrit.httpd.AllRequestFilter;
-import com.google.gerrit.httpd.WebSession;
-import com.google.gerrit.server.AccessPath;
-import com.google.inject.Inject;
-import com.google.inject.Singleton;
 import java.io.IOException;
+
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.gerrit.extensions.registration.DynamicItem;
+import com.google.gerrit.httpd.AllRequestFilter;
+import com.google.gerrit.httpd.WebSession;
+import com.google.gerrit.server.AccessPath;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
 @Singleton
 public class XAuthFilter extends AllRequestFilter {
@@ -55,7 +58,8 @@ public class XAuthFilter extends AllRequestFilter {
         log.info("REST API URI {} allowed for user {}", uri, currentUser);
         session.setAccessPathOk(AccessPath.REST_API, true);
       } else {
-        ((HttpServletResponse) response).sendError(HttpServletResponse.SC_FORBIDDEN);
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
+        httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN);
         return;
       }
     }

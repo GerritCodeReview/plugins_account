@@ -22,6 +22,7 @@ public class HttpModule extends ServletModule {
 
   @Override
   protected void configureServlets() {
+    DynamicSet.bind(binder(), AllRequestFilter.class).to(AccountLoginRedirectFilter.class);
     DynamicSet.bind(binder(), AllRequestFilter.class).to(XAuthFilter.class);
   }
 }
