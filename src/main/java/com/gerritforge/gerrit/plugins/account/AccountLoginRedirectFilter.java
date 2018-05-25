@@ -14,21 +14,6 @@
 
 package com.gerritforge.gerrit.plugins.account;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Arrays;
-import java.util.Optional;
-
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.annotations.PluginCanonicalWebUrl;
 import com.google.gerrit.extensions.registration.DynamicItem;
@@ -38,6 +23,19 @@ import com.google.gerrit.server.config.CanonicalWebUrl;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.Optional;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Singleton
 public class AccountLoginRedirectFilter extends AllRequestFilter {
@@ -49,22 +47,24 @@ public class AccountLoginRedirectFilter extends AllRequestFilter {
   private final DynamicItem<WebSession> webSession;
 
   @Inject
-  public AccountLoginRedirectFilter(@CanonicalWebUrl @Nullable Provider<String> urlProvider,
-      @PluginCanonicalWebUrl Provider<String> pluginUrlProvider, DynamicItem<WebSession> webSession) {
+  public AccountLoginRedirectFilter(
+      @CanonicalWebUrl @Nullable Provider<String> urlProvider,
+      @PluginCanonicalWebUrl Provider<String> pluginUrlProvider,
+      DynamicItem<WebSession> webSession) {
     this.urlProvider = urlProvider;
     this.webSession = webSession;
     this.pluginUrlProvider = pluginUrlProvider;
   }
 
   @Override
-  public void init(FilterConfig filterConfig) throws ServletException {
-  }
+  public void init(FilterConfig filterConfig) throws ServletException {}
 
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
       throws IOException, ServletException {
-    Optional<String> redirectUrl = getRedirectUrlFromCookie((HttpServletRequest) request)
-        .filter(r -> webSession.get().isSignedIn());
+    Optional<String> redirectUrl =
+        getRedirectUrlFromCookie((HttpServletRequest) request)
+            .filter(r -> webSession.get().isSignedIn());
     String requestUri = ((HttpServletRequest) request).getRequestURI();
     String pluginUri = getPluginUri();
     HttpServletResponse httpResponse = (HttpServletResponse) response;
@@ -98,7 +98,9 @@ public class AccountLoginRedirectFilter extends AllRequestFilter {
       return Optional.empty();
     }
 
-    return Arrays.stream(cookies).filter(c -> c.getName().equals(REDIRECT_COOKIE)).findFirst()
+    return Arrays.stream(cookies)
+        .filter(c -> c.getName().equals(REDIRECT_COOKIE))
+        .findFirst()
         .flatMap(c -> resolveUrl(urlProvider.get(), c.getValue()));
   }
 
@@ -114,7 +116,8 @@ public class AccountLoginRedirectFilter extends AllRequestFilter {
     return Optional.empty();
   }
 
-  private void redirectAndResetCookie(HttpServletResponse response, String redirectUrl) throws IOException {
+  private void redirectAndResetCookie(HttpServletResponse response, String redirectUrl)
+      throws IOException {
     Cookie clearCookie = new Cookie(REDIRECT_COOKIE, "");
     clearCookie.setMaxAge(0);
     response.addCookie(clearCookie);
@@ -122,6 +125,5 @@ public class AccountLoginRedirectFilter extends AllRequestFilter {
   }
 
   @Override
-  public void destroy() {
-  }
+  public void destroy() {}
 }

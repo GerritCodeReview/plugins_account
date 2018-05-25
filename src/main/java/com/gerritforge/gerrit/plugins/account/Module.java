@@ -20,26 +20,27 @@ import com.gerritforge.gerrit.plugins.account.permissions.DeleteAccountCapabilit
 import com.gerritforge.gerrit.plugins.account.permissions.DeleteOwnAccountCapability;
 import com.google.gerrit.extensions.annotations.Exports;
 import com.google.gerrit.extensions.config.CapabilityDefinition;
+import com.google.gerrit.extensions.registration.DynamicSet;
 import com.google.gerrit.extensions.restapi.RestApiModule;
+import com.google.gerrit.extensions.webui.TopMenu;
 import com.google.inject.AbstractModule;
 
 class Module extends AbstractModule {
 
   @Override
   protected void configure() {
-    install(
-        new RestApiModule() {
-          @Override
-          protected void configure() {
-            delete(ACCOUNT_KIND).to(DeleteAccount.class);
-          }
-        });
+    install(new RestApiModule() {
+      @Override
+      protected void configure() {
+        delete(ACCOUNT_KIND).to(DeleteAccount.class);
+      }
+    });
 
-    bind(CapabilityDefinition.class)
-        .annotatedWith(Exports.named(DeleteAccountCapability.DELETE_ACCOUNT))
+    bind(CapabilityDefinition.class).annotatedWith(Exports.named(DeleteAccountCapability.DELETE_ACCOUNT))
         .to(DeleteAccountCapability.class);
-    bind(CapabilityDefinition.class)
-        .annotatedWith(Exports.named(DeleteOwnAccountCapability.DELETE_OWN_ACCOUNT))
+    bind(CapabilityDefinition.class).annotatedWith(Exports.named(DeleteOwnAccountCapability.DELETE_OWN_ACCOUNT))
         .to(DeleteOwnAccountCapability.class);
+
+    DynamicSet.bind(binder(), TopMenu.class).to(AccountTopMenu.class);
   }
 }
