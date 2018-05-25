@@ -142,6 +142,30 @@
       "revId": "0c8ac87d662b8671204c560f4a7adfe87ab57a05",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a5fd5368_abea31e5",
+        "filename": "src/main/resources/static/account.html",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1045122
+      },
+      "writtenOn": "2018-05-25T06:56:13Z",
+      "side": 1,
+      "message": "Looks good. I hope that Gerrit core will facilitate a bit more in the future so that you don\u0027t need to care about this in every plugin creating its own page.",
+      "parentUuid": "6ecf6bd2_0dc013a0",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 86
+      },
+      "revId": "0c8ac87d662b8671204c560f4a7adfe87ab57a05",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
