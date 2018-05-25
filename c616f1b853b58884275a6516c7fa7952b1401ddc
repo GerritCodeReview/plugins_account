@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bcd85078_759bb165",
+        "filename": "src/main/java/com/gerritforge/gerrit/plugins/account/AccountTopMenu.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2018-05-25T13:32:31Z",
+      "side": 1,
+      "message": "Missing license",
+      "revId": "c616f1b853b58884275a6516c7fa7952b1401ddc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
