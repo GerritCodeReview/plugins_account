@@ -14,31 +14,43 @@
 
 package com.gerritforge.gerrit.plugins.account;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.google.gerrit.common.Nullable;
 import com.google.gerrit.extensions.annotations.PluginCanonicalWebUrl;
 import com.google.gerrit.extensions.client.MenuItem;
 import com.google.gerrit.extensions.webui.TopMenu;
+import com.google.gerrit.server.CurrentUser;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.Singleton;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 @Singleton
 public class AccountTopMenu implements TopMenu {
 
   private final Provider<String> pluginUrl;
+  private final Provider<CurrentUser> currentUserProvider;
 
   @Inject
-  public AccountTopMenu(@PluginCanonicalWebUrl @Nullable Provider<String> pluginUrl) {
+  public AccountTopMenu(
+      @PluginCanonicalWebUrl @Nullable Provider<String> pluginUrl,
+      Provider<CurrentUser> currentUserProvider) {
     this.pluginUrl = pluginUrl;
+    this.currentUserProvider = currentUserProvider;
   }
 
   @Override
   public List<MenuEntry> getEntries() {
-    return Arrays.asList(new MenuEntry("Account",
-        Arrays.asList(new MenuItem("Personal Information", pluginUrl.get() + "static/account.html", "_self"))));
-  }
+    if (currentUserProvider.get().isIdentifiedUser()) {
+      return Arrays.asList(
+          new MenuEntry(
+              "Account",
+              Arrays.asList(
+                  new MenuItem(
+                      "Personal Information", pluginUrl.get() + "static/account.html", "_self"))));
+    }
 
+    return Collections.emptyList();
+  }
 }
