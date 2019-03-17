@@ -14,6 +14,7 @@
 
 package com.gerritforge.gerrit.plugins.account;
 
+import com.google.gerrit.extensions.common.NameInput;
 import com.gerritforge.gerrit.plugins.account.permissions.DeleteAccountCapability;
 import com.gerritforge.gerrit.plugins.account.permissions.DeleteOwnAccountCapability;
 import com.google.gerrit.extensions.annotations.PluginName;
@@ -27,7 +28,7 @@ import com.google.gerrit.extensions.restapi.RestApiException;
 import com.google.gerrit.reviewdb.client.Account;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.account.AccountResource;
-import com.google.gerrit.server.account.PutName;
+import com.google.gerrit.server.restapi.account.PutName;
 import com.google.gerrit.server.account.SetInactiveFlag;
 import com.google.gerrit.server.account.externalids.ExternalId;
 import com.google.gerrit.server.permissions.PermissionBackend;
@@ -92,7 +93,7 @@ public class GerritAccountRemover implements AccountRemover {
 
   @Override
   public boolean canDelete(int accountId) {
-    PermissionBackend.WithUser userPermission = permissionBackend.user(userProvider);
+    PermissionBackend.WithUser userPermission = permissionBackend.user(userProvider.get());
     return userPermission.testOrFalse(
             new PluginPermission(pluginName, DeleteAccountCapability.DELETE_ACCOUNT))
         || (userPermission.testOrFalse(
@@ -101,7 +102,7 @@ public class GerritAccountRemover implements AccountRemover {
   }
 
   private void removeFullName(AccountResource userRsc) throws Exception {
-    putName.apply(userRsc, new PutName.Input());
+    putName.apply(userRsc, new NameInput());
   }
 
   private void removeExternalIds(AccountApi account) throws RestApiException {

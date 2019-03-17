@@ -60,7 +60,6 @@ public class DeleteAccount implements RestModifyView<AccountResource, DeleteAcco
     boolean removed = false;
 
     IdentifiedUser user = resource.getUser();
-    AccountPersonalInformation accountInfo = new AccountPersonalInformation(user);
     int accountId = user.getAccountId().get();
     assertDeletePermission(accountId);
 
@@ -69,7 +68,7 @@ public class DeleteAccount implements RestModifyView<AccountResource, DeleteAcco
       removed = true;
     }
 
-    return new DeleteAccountResponse(removed, accountInfo);
+    return new DeleteAccountResponse(removed);
   }
 
   private void assertDeletePermission(int accountId) throws AuthException {

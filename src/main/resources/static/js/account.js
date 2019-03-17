@@ -29,10 +29,14 @@ app.controller('AccountDeleteController', function AccountDeleteController($scop
   
   $scope.deleted = "";
   
-  $http.delete('/a/accounts/self', {
+  $http.get('/a/accounts/self', {
     headers: {'X-Requested-With' : 'XMLHttpRequest'}
   }).then(function(response) {
-    $scope.account = response.data.account_info;
+    $scope.account = {
+        "fullname": response.data.name,
+        "username" : response.data.username,
+        "emails" : [ response.data.email ]
+    }
   });
   
   $scope.backToGerrit = function() {

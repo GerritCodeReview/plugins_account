@@ -62,7 +62,6 @@ public class DeleteAccountCommand extends SshCommand {
       @SuppressWarnings("resource")
       PrintWriter out = resp.deleted ? stdout : stderr;
       out.println("Account " + (resp.deleted ? "" : "NOT") + " deleted");
-      out.println(new Gson().toJson(resp.accountInfo));
     } catch (Exception e) {
       stderr.printf("FAILED (%s): %s\n", e.getClass().getName(), e.getMessage());
       stderr.flush();

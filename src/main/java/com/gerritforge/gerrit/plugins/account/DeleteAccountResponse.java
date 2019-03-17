@@ -16,10 +16,8 @@ package com.gerritforge.gerrit.plugins.account;
 
 public class DeleteAccountResponse {
   public final boolean deleted;
-  public final AccountPersonalInformation accountInfo;
 
-  public DeleteAccountResponse(boolean deleted, AccountPersonalInformation accountInfo) {
+  public DeleteAccountResponse(boolean deleted) {
     this.deleted = deleted;
-    this.accountInfo = accountInfo;
   }
 }
