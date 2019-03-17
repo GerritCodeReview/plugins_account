@@ -32,7 +32,8 @@ import org.slf4j.LoggerFactory;
 
 @Singleton
 public class XAuthFilter extends AllRequestFilter {
-  public static final String ALLOWED_URI_SUFFIX = "/a/accounts/self";
+  public static final String ALLOWED_GET_URI_SUFFIX = "/a/accounts/self";
+  public static final String ALLOWED_DELETE_URI_SUFFIX = "/a/accounts/self/account~";
 
   private static final Logger log = LoggerFactory.getLogger(XAuthFilter.class);
 
@@ -46,14 +47,22 @@ public class XAuthFilter extends AllRequestFilter {
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
       throws IOException, ServletException {
-    String uri = ((HttpServletRequest) request).getRequestURI();
+    HttpServletRequest httpRequest = (HttpServletRequest) request;
+    String uri = httpRequest.getRequestURI();
+    String method = httpRequest.getMethod();
 
-    if (uri.endsWith(ALLOWED_URI_SUFFIX)) {
+    if ((method.equals("GET") && uri.endsWith(ALLOWED_GET_URI_SUFFIX))
+        || method.equals("DELETE") && uri.endsWith(ALLOWED_DELETE_URI_SUFFIX)) {
       WebSession session = webSession.get();
       if (session != null && session.isSignedIn() && session.getXGerritAuth() != null) {
-        String currentUser = session.getUser().getUserName();
-        log.info("REST API URI {} allowed for user {}", uri, currentUser);
-        session.setAccessPathOk(AccessPath.REST_API, true);
+        session
+            .getUser()
+            .getUserName()
+            .ifPresent(
+                currentUser -> {
+                  log.info("REST API URI {} allowed for user {}", uri, currentUser);
+                  session.setAccessPathOk(AccessPath.REST_API, true);
+                });
       } else {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         httpResponse.sendError(HttpServletResponse.SC_FORBIDDEN);

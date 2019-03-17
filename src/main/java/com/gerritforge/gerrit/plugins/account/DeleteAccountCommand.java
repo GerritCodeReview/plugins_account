@@ -18,7 +18,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.gerrit.server.account.AccountResource;
 import com.google.gerrit.sshd.CommandMetaData;
 import com.google.gerrit.sshd.SshCommand;
-import com.google.gson.Gson;
 import com.google.inject.Inject;
 import java.io.PrintWriter;
 import org.kohsuke.args4j.Argument;
@@ -34,10 +33,9 @@ public class DeleteAccountCommand extends SshCommand {
   private int accountId;
 
   @Option(
-    name = "--yes-really-delete",
-    metaVar = "ACCOUNT-NAME",
-    usage = "confirmation to delete the account"
-  )
+      name = "--yes-really-delete",
+      metaVar = "ACCOUNT-NAME",
+      usage = "confirmation to delete the account")
   private String accountName;
 
   private final AccountResourceFactory accountFactory;
@@ -62,7 +60,6 @@ public class DeleteAccountCommand extends SshCommand {
       @SuppressWarnings("resource")
       PrintWriter out = resp.deleted ? stdout : stderr;
       out.println("Account " + (resp.deleted ? "" : "NOT") + " deleted");
-      out.println(new Gson().toJson(resp.accountInfo));
     } catch (Exception e) {
       stderr.printf("FAILED (%s): %s\n", e.getClass().getName(), e.getMessage());
       stderr.flush();
