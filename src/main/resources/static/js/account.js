@@ -64,7 +64,7 @@ app.controller('AccountDeleteController', function AccountDeleteController($scop
           $scope.alert = "Oops, something went wrong. Your full name does not match your profile (" + response.data.account_info.fullname + "). Please double-check and try again."
         } else {
           $http.get('/logout').then(function(response) {
-            $scope.deleted = "Your account has been deletedfuly removed and you have been logged out from Gerrit Code Review";
+            $scope.deleted = "Your account has been removed and you have been logged out from Gerrit Code Review";
           });
         }
     }, function(rejection) {
