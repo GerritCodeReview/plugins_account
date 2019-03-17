@@ -15,7 +15,6 @@
 var app = angular.module('Account', [])
 
 app.controller('AccountDeleteController', function AccountDeleteController($scope, $http, $window) {
-
   
   $scope.account = {
     "fullname" : "",
@@ -51,7 +50,7 @@ app.controller('AccountDeleteController', function AccountDeleteController($scop
 
     $http({
         method: 'DELETE',
-        url: '/a/accounts/self',
+        url: '/a/accounts/self/account~',
         data: {
             account_name: $scope.fullName
         },
