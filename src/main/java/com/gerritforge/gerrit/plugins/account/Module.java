@@ -29,16 +29,19 @@ class Module extends AbstractModule {
 
   @Override
   protected void configure() {
-    install(new RestApiModule() {
-      @Override
-      protected void configure() {
-        delete(ACCOUNT_KIND).to(DeleteAccount.class);
-      }
-    });
+    install(
+        new RestApiModule() {
+          @Override
+          protected void configure() {
+            delete(ACCOUNT_KIND).to(DeleteAccount.class);
+          }
+        });
 
-    bind(CapabilityDefinition.class).annotatedWith(Exports.named(DeleteAccountCapability.DELETE_ACCOUNT))
+    bind(CapabilityDefinition.class)
+        .annotatedWith(Exports.named(DeleteAccountCapability.DELETE_ACCOUNT))
         .to(DeleteAccountCapability.class);
-    bind(CapabilityDefinition.class).annotatedWith(Exports.named(DeleteOwnAccountCapability.DELETE_OWN_ACCOUNT))
+    bind(CapabilityDefinition.class)
+        .annotatedWith(Exports.named(DeleteOwnAccountCapability.DELETE_OWN_ACCOUNT))
         .to(DeleteOwnAccountCapability.class);
 
     DynamicSet.bind(binder(), TopMenu.class).to(AccountTopMenu.class);
