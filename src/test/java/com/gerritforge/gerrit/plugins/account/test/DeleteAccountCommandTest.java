@@ -20,7 +20,6 @@ import static org.mockito.ArgumentMatchers.same;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.gerritforge.gerrit.plugins.account.AccountPersonalInformation;
 import com.gerritforge.gerrit.plugins.account.AccountResourceFactory;
 import com.gerritforge.gerrit.plugins.account.DeleteAccount;
 import com.gerritforge.gerrit.plugins.account.DeleteAccountCommand;
@@ -52,8 +51,7 @@ public class DeleteAccountCommandTest {
     deleteAccountCommand = new DeleteAccountCommand(accountFactoryMock, deleteAccountMock);
     deleteAccountCommand.setPrintWriters(
         new PrintWriter(new ByteArrayOutputStream()), new PrintWriter(new ByteArrayOutputStream()));
-    DeleteAccountResponse resp =
-        new DeleteAccountResponse(true, new AccountPersonalInformation(userMock));
+    DeleteAccountResponse resp = new DeleteAccountResponse(true);
     when(deleteAccountMock.apply(same(accountResourceMock), any(DeleteAccount.Input.class)))
         .thenReturn(resp);
   }
