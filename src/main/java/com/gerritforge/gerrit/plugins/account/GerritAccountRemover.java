@@ -107,9 +107,7 @@ public class GerritAccountRemover implements AccountRemover {
 
   private void removeExternalIds(AccountApi account) throws RestApiException {
     List<String> externalIds =
-        account
-            .getExternalIds()
-            .stream()
+        account.getExternalIds().stream()
             .map(eid -> eid.identity)
             .filter(eid -> !eid.startsWith(ExternalId.SCHEME_USERNAME))
             .filter(eid -> !eid.startsWith(ExternalId.SCHEME_UUID))
