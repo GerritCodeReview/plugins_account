@@ -26,7 +26,7 @@ Then issue the bazel build command:
 The output is created in
 
 ```
-  bazel-genfiles/plugins/account/account.jar
+  bazel-bin/plugins/account/account.jar
 ```
 
 To execute the tests run:
