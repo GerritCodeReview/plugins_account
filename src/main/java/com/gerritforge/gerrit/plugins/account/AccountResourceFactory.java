@@ -14,7 +14,7 @@
 
 package com.gerritforge.gerrit.plugins.account;
 
-import com.google.gerrit.reviewdb.client.Account;
+import com.google.gerrit.entities.Account;
 import com.google.gerrit.server.IdentifiedUser.GenericFactory;
 import com.google.gerrit.server.account.AccountResource;
 import com.google.inject.Inject;
