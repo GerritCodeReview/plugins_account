@@ -16,6 +16,7 @@ package com.gerritforge.gerrit.plugins.account;
 
 import com.gerritforge.gerrit.plugins.account.permissions.DeleteAccountCapability;
 import com.gerritforge.gerrit.plugins.account.permissions.DeleteOwnAccountCapability;
+import com.google.gerrit.entities.Account;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.extensions.api.GerritApi;
 import com.google.gerrit.extensions.api.access.PluginPermission;
@@ -25,7 +26,6 @@ import com.google.gerrit.extensions.common.EmailInfo;
 import com.google.gerrit.extensions.common.NameInput;
 import com.google.gerrit.extensions.common.SshKeyInfo;
 import com.google.gerrit.extensions.restapi.RestApiException;
-import com.google.gerrit.entities.Account;
 import com.google.gerrit.server.CurrentUser;
 import com.google.gerrit.server.account.AccountResource;
 import com.google.gerrit.server.account.SetInactiveFlag;
