@@ -19,7 +19,7 @@ import static org.mockito.Mockito.*;
 import com.gerritforge.gerrit.plugins.account.AccountRemover;
 import com.gerritforge.gerrit.plugins.account.DeleteAccount;
 import com.google.gerrit.extensions.restapi.AuthException;
-import com.google.gerrit.reviewdb.client.Account;
+import com.google.gerrit.entities.Account;
 import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.account.AccountResource;
 import org.junit.Before;
