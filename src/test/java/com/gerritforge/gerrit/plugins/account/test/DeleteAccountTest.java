@@ -85,7 +85,7 @@ public class DeleteAccountTest {
   }
 
   private void mockUserData(int accountId, String accountName) {
-    when(userMock.getAccountId()).thenReturn(new Account.Id(accountId));
+    when(userMock.getAccountId()).thenReturn(Account.id(accountId));
     when(userMock.getName()).thenReturn(accountName);
   }
 }

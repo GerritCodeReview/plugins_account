@@ -28,6 +28,6 @@ public class AccountResourceFactory {
   }
 
   public AccountResource create(int accountId) {
-    return new AccountResource(userFactory.create(new Account.Id(accountId)));
+    return new AccountResource(userFactory.create(Account.id(accountId)));
   }
 }

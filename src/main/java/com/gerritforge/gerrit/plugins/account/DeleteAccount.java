@@ -17,6 +17,7 @@ package com.gerritforge.gerrit.plugins.account;
 import com.google.gerrit.extensions.restapi.AuthException;
 import com.google.gerrit.extensions.restapi.BadRequestException;
 import com.google.gerrit.extensions.restapi.ResourceConflictException;
+import com.google.gerrit.extensions.restapi.Response;
 import com.google.gerrit.extensions.restapi.RestModifyView;
 import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.account.AccountResource;
@@ -55,7 +56,7 @@ public class DeleteAccount implements RestModifyView<AccountResource, DeleteAcco
   }
 
   @Override
-  public Object apply(AccountResource resource, DeleteAccount.Input input)
+  public Response<Object> apply(AccountResource resource, DeleteAccount.Input input)
       throws AuthException, BadRequestException, ResourceConflictException, Exception {
     boolean removed = false;
 
@@ -68,7 +69,7 @@ public class DeleteAccount implements RestModifyView<AccountResource, DeleteAcco
       removed = true;
     }
 
-    return new DeleteAccountResponse(removed);
+    return Response.ok(new DeleteAccountResponse(removed));
   }
 
   private void assertDeletePermission(int accountId) throws AuthException {

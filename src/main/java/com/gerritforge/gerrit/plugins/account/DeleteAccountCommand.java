@@ -55,7 +55,8 @@ public class DeleteAccountCommand extends SshCommand {
       DeleteAccount.Input input = new DeleteAccount.Input();
       input.accountName = accountName;
 
-      DeleteAccountResponse resp = (DeleteAccountResponse) deleteAccount.apply(account, input);
+      DeleteAccountResponse resp =
+          (DeleteAccountResponse) deleteAccount.apply(account, input).value();
 
       @SuppressWarnings("resource")
       PrintWriter out = resp.deleted ? stdout : stderr;

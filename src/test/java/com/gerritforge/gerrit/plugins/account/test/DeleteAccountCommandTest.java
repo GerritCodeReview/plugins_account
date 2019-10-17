@@ -24,6 +24,7 @@ import com.gerritforge.gerrit.plugins.account.AccountResourceFactory;
 import com.gerritforge.gerrit.plugins.account.DeleteAccount;
 import com.gerritforge.gerrit.plugins.account.DeleteAccountCommand;
 import com.gerritforge.gerrit.plugins.account.DeleteAccountResponse;
+import com.google.gerrit.extensions.restapi.Response;
 import com.google.gerrit.server.IdentifiedUser;
 import com.google.gerrit.server.account.AccountResource;
 import java.io.ByteArrayOutputStream;
@@ -53,7 +54,7 @@ public class DeleteAccountCommandTest {
         new PrintWriter(new ByteArrayOutputStream()), new PrintWriter(new ByteArrayOutputStream()));
     DeleteAccountResponse resp = new DeleteAccountResponse(true);
     when(deleteAccountMock.apply(same(accountResourceMock), any(DeleteAccount.Input.class)))
-        .thenReturn(resp);
+        .thenReturn(Response.ok(resp));
   }
 
   @Test

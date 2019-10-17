@@ -87,7 +87,7 @@ public class GerritAccountRemover implements AccountRemover {
     removeExternalIds(account);
     removeFullName(getAccountResource(accountId));
     if (account.getActive()) {
-      setInactive.deactivate(new Account.Id(accountId));
+      setInactive.deactivate(Account.id(accountId));
     }
   }
 
