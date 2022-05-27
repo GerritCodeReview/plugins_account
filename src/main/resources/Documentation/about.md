@@ -27,6 +27,11 @@ There are a few caveats:
 	which will always be kept in the repository for consistency with existing
 	reviews.
 
+* GPG keys are only removed if a user deletes their account themselves
+
+	Since only a user themselves has access rights to list their GPG keys
+	only they themselves are able to trigger GPG key removal through this plugin. 
+
 Replication of accounts deletions
 --------------------------------
 
