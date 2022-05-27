@@ -25,9 +25,12 @@ import com.google.gerrit.extensions.api.accounts.Accounts;
 import com.google.gerrit.extensions.common.EmailInfo;
 import com.google.gerrit.extensions.common.NameInput;
 import com.google.gerrit.extensions.common.SshKeyInfo;
+import com.google.gerrit.extensions.restapi.IdString;
 import com.google.gerrit.extensions.restapi.RestApiException;
 import com.google.gerrit.server.CurrentUser;
+import com.google.gerrit.server.GpgException;
 import com.google.gerrit.server.account.AccountResource;
+import com.google.gerrit.server.account.GpgApiAdapter;
 import com.google.gerrit.server.account.SetInactiveFlag;
 import com.google.gerrit.server.account.externalids.ExternalId;
 import com.google.gerrit.server.permissions.PermissionBackend;
@@ -41,6 +44,7 @@ import java.util.stream.Collectors;
 public class GerritAccountRemover implements AccountRemover {
   private final Accounts accounts;
   private final PutName putName;
+  private final GpgApiAdapter gpgApi;
   private final AccountResourceFactory accountFactory;
   private final PermissionBackend permissionBackend;
   private final Provider<CurrentUser> userProvider;
@@ -51,11 +55,13 @@ public class GerritAccountRemover implements AccountRemover {
   public GerritAccountRemover(
       GerritApi api,
       PutName putName,
+      GpgApiAdapter gpgApi,
       AccountResourceFactory accountFactory,
       PermissionBackend permissionBackend,
       Provider<CurrentUser> userProvider,
       SetInactiveFlag setInactive,
       @PluginName String pluginName) {
+    this.gpgApi = gpgApi;
     this.accounts = api.accounts();
     this.putName = putName;
     this.accountFactory = accountFactory;
@@ -84,6 +90,11 @@ public class GerritAccountRemover implements AccountRemover {
   private void removeAccount(AccountApi account, int accountId) throws Exception {
     removeAccountEmails(account);
     removeAccountSshKeys(account);
+    // GPG keys are only readable by the user themselves
+    if (gpgApi.isEnabled() && isMyAccount(accountId)) {
+      removeGpgKeys(gpgApi, getAccountResource(accountId));
+    }
+    // External ids are required to list GPG keys so remove them after GPG keys
     removeExternalIds(account);
     removeFullName(getAccountResource(accountId));
     if (account.getActive()) {
@@ -116,6 +127,13 @@ public class GerritAccountRemover implements AccountRemover {
             .collect(Collectors.toList());
     if (externalIds.size() > 0) {
       account.deleteExternalIds(externalIds);
+    }
+  }
+
+  private void removeGpgKeys(GpgApiAdapter gpgApi, AccountResource accountResource)
+      throws RestApiException, GpgException {
+    for (String gpgKeyId : gpgApi.listGpgKeys(accountResource).keySet()) {
+      gpgApi.gpgKey(accountResource, IdString.fromDecoded(gpgKeyId)).delete();
     }
   }
 
