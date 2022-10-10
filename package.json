@@ -1,0 +1,13 @@
+{
+  "name": "account",
+  "license": "APL 2.0",
+  "author": {
+    "name": "Luca Milanesio",
+    "email": "luca.milanesio@gmail.com"
+  },
+  "dependencies": {
+    "angular": "^1.7.0",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1"
+  }
+}
