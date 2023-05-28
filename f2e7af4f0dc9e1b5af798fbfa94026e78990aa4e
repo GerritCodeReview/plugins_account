@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c9d0808_0b101815",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T09:49:24Z",
+      "side": 1,
+      "message": "Auto-redirect to login when not logged in\n\nWhen visiting the account self-removal form, make sure\nthat the current user is in session. If not, redirect to login\nand, once logged in, redirect back to the form.\n\nThis allows to include the account self-removal form as deeplink\nand enable a frictionless flow for users to check their personal\ninformation and remove themselves if required.",
+      "revId": "f2e7af4f0dc9e1b5af798fbfa94026e78990aa4e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
