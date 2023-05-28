@@ -3,6 +3,91 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "73fff868_39d3befd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "https://gerrit-review.googlesource.com/q/I64cdaee2803b63e05285b054cecde7be6b390149",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "589e4ff2_be880a75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "https://gerrit-review.googlesource.com/q/I64cdaee2803b63e05285b054cecde7be6b390149",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b61c1ba6_54e42a01",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "https://gerrit-review.googlesource.com/q/I64cdaee2803b63e05285b054cecde7be6b390149",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "927eee4e_0ba7f60e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "https://gerrit-review.googlesource.com/q/I64cdaee2803b63e05285b054cecde7be6b390149",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf5cf71f_467974fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "https://gerrit-review.googlesource.com/q/I64cdaee2803b63e05285b054cecde7be6b390149",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "75803c72_6ef97647",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
@@ -14,6 +99,125 @@
       "writtenOn": "2023-05-28T09:40:53Z",
       "side": 1,
       "message": "Initial version of the account removal plugin\n\nThe account plugin for Gerrit is designed to allow companies to\nimprove compliance with the GDPR requirements:\n\n- Ability for an individual to display the personal information that\n  Gerrit holds about him\n- Ability to \"self-remove\" the personal information from Gerrit\n\nNOTE: This plugin itself is not giving any GDPR certification or\n      compliance. You would need to read carefully the EU law and\n      apply to your Company context and organisation.",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "982e15a7_812c103a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "BUILD",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2fea377_3cff98c8",
+        "filename": "BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "git fetch https://gerrit.googlesource.com/plugins/account refs/changes/52/180252/5 \u0026\u0026 git checkout -b change-180252 FETCH_HEAD",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42e26778_82debdec",
+        "filename": "BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "git fetch https://gerrit.googlesource.com/plugins/account refs/changes/52/180252/5 \u0026\u0026 git checkout -b change-180252 FETCH_HEAD",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9dc468a_dc409cdd",
+        "filename": "BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "git fetch https://gerrit.googlesource.com/plugins/account refs/changes/52/180252/5 \u0026\u0026 git checkout -b change-180252 FETCH_HEAD",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "890e3791_32a1ac9e",
+        "filename": "BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "git fetch https://gerrit.googlesource.com/plugins/account refs/changes/52/180252/5 \u0026\u0026 git checkout -b change-180252 FETCH_HEAD",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b27492a6_da536b57",
+        "filename": "BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "BUILD",
+      "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c81e62f5_74103c92",
+        "filename": "BUILD",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T10:19:36Z",
+      "side": 1,
+      "message": "git fetch https://gerrit.googlesource.com/plugins/account refs/changes/52/180252/5 \u0026\u0026 git checkout -b change-180252 FETCH_HEAD",
       "revId": "7c43a8e91b4a368441b73580d4ad7eb960c09295",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
