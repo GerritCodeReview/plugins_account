@@ -16,6 +16,23 @@
       "message": "git fetch https://gerrit.googlesource.com/plugins/account refs/changes/52/180252/5 \u0026\u0026 git checkout -b change-180252 FETCH_HEAD",
       "revId": "0a9d9ca31c5601c47b2a069fb840139b58eaf8d0",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56b440bc_f940185e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1143997
+      },
+      "writtenOn": "2023-05-28T09:48:39Z",
+      "side": 1,
+      "message": "https://gerrit-review.googlesource.com/q/I234615c2d6c7250e63b46c837f6f541cd073f12e",
+      "revId": "0a9d9ca31c5601c47b2a069fb840139b58eaf8d0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
