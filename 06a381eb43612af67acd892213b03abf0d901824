@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20230ed9_a95e1e26",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1154913
+      },
+      "writtenOn": "2023-08-10T11:14:33Z",
+      "side": 1,
+      "message": "241661: Improve text on account details page | https://gerrit-review.googlesource.com/c/plugins/account/+/241661",
+      "revId": "06a381eb43612af67acd892213b03abf0d901824",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
