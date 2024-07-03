@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30f3ca9b_96967718",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2024-07-03T21:06:31Z",
+      "side": 1,
+      "message": "I believe the account plugin needs to be removed: its core feature is now included in Gerrit (removal of users)",
+      "revId": "677c15aa4f72dc272d1bc0643b2ba8c7be029446",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
