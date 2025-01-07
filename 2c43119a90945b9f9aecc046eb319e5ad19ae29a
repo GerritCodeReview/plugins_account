@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3847cf8_7c84c0c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3806520
+      },
+      "writtenOn": "2025-01-07T03:16:41Z",
+      "side": 1,
+      "message": "ELIMINAR /cuentas/1000002 HTTP/1.0\n  Tipo de contenido: aplicación/json;conjunto de caracteres\u003dUTF-8\n\n\n  {\n    \"account_name\": \"Juan Pérez\"\n  }",
+      "revId": "2c43119a90945b9f9aecc046eb319e5ad19ae29a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
