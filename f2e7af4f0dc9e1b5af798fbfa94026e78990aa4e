@@ -33,6 +33,23 @@
       "message": "src/main/java/com/gerritforge/gerrit/plugins/account/AccountLoginRedirectFilter.java",
       "revId": "f2e7af4f0dc9e1b5af798fbfa94026e78990aa4e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5c4c57f_b5095f9d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4624548
+      },
+      "writtenOn": "2026-04-26T21:28:02Z",
+      "side": 1,
+      "message": "Thanks 🙏👍",
+      "revId": "f2e7af4f0dc9e1b5af798fbfa94026e78990aa4e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
