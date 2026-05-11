@@ -51,6 +51,23 @@
       "message": "Juliolupe1213@gmail.com",
       "revId": "677c15aa4f72dc272d1bc0643b2ba8c7be029446",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c18b095_26ea9aea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4815069
+      },
+      "writtenOn": "2026-05-11T22:51:17Z",
+      "side": 1,
+      "message": "Copyright (C) 2023 The Android Open Source Project\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n// http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\npackage com.googlesource.gerrit.plugins.download;\nimport com.google.common.collect.ImmutableList;\nimport com.google.gerrit.entities.Account;\nimport com.google.gerrit.server.CurrentUser;",
+      "revId": "677c15aa4f72dc272d1bc0643b2ba8c7be029446",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
