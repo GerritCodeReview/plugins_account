@@ -33,6 +33,23 @@
       "message": "Manifest no limit",
       "revId": "5f3cb9f5b0d2508f06ec53d6afc6f91f3d6f7336",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e4a0d1d_cfaa1fbb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4577458
+      },
+      "writtenOn": "2026-07-02T16:37:01Z",
+      "side": 1,
+      "message": "https://gerrit-review.googlesource.com/c/plugins/account/+/584846/comments/86dbbb81_5f28cb53",
+      "revId": "5f3cb9f5b0d2508f06ec53d6afc6f91f3d6f7336",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
