@@ -16,6 +16,23 @@
       "message": "Manifest",
       "revId": "5f3cb9f5b0d2508f06ec53d6afc6f91f3d6f7336",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f49fbbe8_ea254d58",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4577458
+      },
+      "writtenOn": "2026-07-02T16:34:38Z",
+      "side": 1,
+      "message": "Manifest no limit",
+      "revId": "5f3cb9f5b0d2508f06ec53d6afc6f91f3d6f7336",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
